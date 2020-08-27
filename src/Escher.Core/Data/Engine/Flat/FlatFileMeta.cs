@@ -17,6 +17,6 @@ namespace Escher.Data.Engine.Flat
         /// All subsequent rows contain the current identity value plus the increment value where current identity value is the
         /// last identity value generated for the table or view.
         /// </summary>
-        public long Seed;
+        public long Seed { get; set; }
     }
 }

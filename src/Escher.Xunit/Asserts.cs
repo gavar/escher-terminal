@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.IO;
 using System.Text.Json;
 
@@ -17,6 +18,13 @@ namespace Escher.Xunit
             Equal(expect, File.ReadAllText(path), ignoreLineEndingDifferences: true);
         }
 
+        public static void FileJson<T>(string path, IDictionary expected)
+        {
+            var actual = NormalizeJsonText<T>(File.ReadAllText(path));
+            var expect = NormalizeJsonData(expected);
+            Equal(expect, actual, false, true, true);
+        }
+        
         public static void FileJson<T>(string path, T expected)
         {
             var actual = NormalizeJsonText<T>(File.ReadAllText(path));

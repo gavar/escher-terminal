@@ -44,7 +44,7 @@ namespace Escher.Data.Engine.Flat
                 repository.Commit();
             }
 
-            Asserts.FileJson(metaPath, new FlatFileMeta { Seed = 2 });
+            Asserts.FileJson(metaPath, Seed(2));
             Asserts.FileLines(filePath, new[]
             {
                 Basic.HEADER,
@@ -67,7 +67,7 @@ namespace Escher.Data.Engine.Flat
                 repository.Commit();
             }
 
-            Asserts.FileJson(metaPath, new FlatFileMeta { Seed = 4 });
+            Asserts.FileJson(metaPath, Seed(4));
             Asserts.FileLines(filePath, new[]
             {
                 Basic.HEADER,
@@ -93,7 +93,7 @@ namespace Escher.Data.Engine.Flat
                 repository.Commit();
             }
 
-            Asserts.FileJson(metaPath, new FlatFileMeta { Seed = 1 });
+            Asserts.FileJson(metaPath, Seed(1));
             Asserts.FileLines(filePath, new[]
             {
                 Basic.HEADER,
@@ -131,7 +131,7 @@ namespace Escher.Data.Engine.Flat
                 repository.Commit();
             }
 
-            Asserts.FileJson(metaPath, new FlatFileMeta { Seed = 2 });
+            Asserts.FileJson(metaPath, Seed(2));
             Asserts.FileLines(filePath, new[]
             {
                 Relation.HEADER,
@@ -151,6 +151,14 @@ namespace Escher.Data.Engine.Flat
                 repository.Insert(a);
                 Assert.Throws<EntityException>(() => repository.Commit());
             }
+        }
+
+        private static IDictionary<string, object> Seed(long seed)
+        {
+            return new Dictionary<string, object>
+            {
+                ["Seed"] = seed,
+            };
         }
 
         private string SetupFilePath([CallerMemberName] string caller = "")
