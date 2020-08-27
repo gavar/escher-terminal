@@ -28,6 +28,15 @@ namespace Escher.App.Services
             if (DateUtils.AgeFullYears(person.BirthDate) < AdultAge && !person.IsAuthorized)
                 return Unauthorized;
 
+            // referencing self
+            var spouse = person.Spouse;
+            if (spouse == person)
+                return Invalid;
+
+            // referencing wrong person
+            if (spouse != null && spouse.Spouse != person)
+                return Invalid;
+
             return 0;
         }
 
@@ -38,12 +47,16 @@ namespace Escher.App.Services
                 0 => null,
                 Young => $"{subject} have to be at least {MinAge} years old",
                 Unauthorized => $"{subject} requires parents authorization until age of {AdultAge}",
+                Invalid => $"{subject} has invalid state",
                 _ => throw new ArgumentOutOfRangeException(nameof(status), status, null),
             };
         }
 
         protected void AssertPerson(Person person, string subject = "Person")
         {
+            if (person.Spouse == person)
+                throw new ArgumentException($"{subject} references itself");
+
             var status = Verify(person);
             if (status < 0)
                 throw new ArgumentException(VerificationMessage(status, subject));
