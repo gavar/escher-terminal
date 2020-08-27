@@ -1,13 +1,13 @@
-using Escher.App.Data;
 using Escher.App.Domain;
+using Escher.Data;
 
 namespace Escher.App.Services
 {
     public class PersonRegistrationService : IPersonRegistrationService
     {
-        protected readonly IPersonRepository repository;
+        protected readonly IRepository<Person> repository;
 
-        public PersonRegistrationService(IPersonRepository repository)
+        public PersonRegistrationService(IRepository<Person> repository)
         {
             this.repository = repository;
         }

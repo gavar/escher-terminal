@@ -22,7 +22,7 @@ namespace Escher.App.Services
 
         public int Verify(Person person)
         {
-            if (DateUtils.AgeFullYears(person.BirthDate) >= MinAge)
+            if (DateUtils.AgeFullYears(person.BirthDate) < MinAge)
                 return Young;
 
             if (DateUtils.AgeFullYears(person.BirthDate) < AdultAge && !person.IsAuthorized)
