@@ -31,25 +31,6 @@ namespace Escher.Terminal
 
         public void Run()
         {
-            var spouse = new Person
-            {
-                FirstName = "Janet",
-                LastName = "Doe",
-                Authorized = true,
-                BirthDate = new DateTime(2004, 06, 03),
-            };
-            var person = new Person
-            {
-                FirstName = "John",
-                LastName = "Doe",
-                BirthDate = new DateTime(1991, 09, 13),
-                Spouse = spouse,
-            };
-            
-            // TODO: validate spouse relations by a service
-            spouse.Spouse = person;
-            
-            service.Register(person);
             central.Commit();
             Console.ReadKey();
         }
