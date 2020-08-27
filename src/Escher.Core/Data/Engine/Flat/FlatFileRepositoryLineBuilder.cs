@@ -20,7 +20,9 @@ namespace Escher.Data.Engine.Flat
                 return entity.Id.ToString();
             }
 
-            return base.GetStringValueFromField(field, fieldValue);
+            return field.TypeConverter != null
+                ? field.TypeConverter.ConvertToString(fieldValue)
+                : base.GetStringValueFromField(field, fieldValue);
         }
     }
 }
