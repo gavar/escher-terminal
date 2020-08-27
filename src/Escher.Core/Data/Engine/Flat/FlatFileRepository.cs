@@ -30,8 +30,7 @@ namespace Escher.Data.Engine.Flat
             lineBuilder = FlatFile.GetBuilder(this.descriptor);
 
             metaPath = filePath + ".meta";
-            using (var stream = Open(metaPath))
-                meta = ReadMeta(stream);
+            meta = ReadMeta(metaPath);
         }
 
         /// <inheritdoc />
@@ -96,7 +95,7 @@ namespace Escher.Data.Engine.Flat
             }
 
             // rewriting meta file with a new state
-            using (var stream = Truncate(metaPath))
+            using (var stream = OpenOrCreate(metaPath))
                 WriteMeta(meta, stream);
         }
 
@@ -142,6 +141,15 @@ namespace Escher.Data.Engine.Flat
             JsonSerializer.SerializeAsync(stream, meta, FlatFileMeta.SERIALIZER_OPTIONS).Wait();
         }
 
+        private static FlatFileMeta ReadMeta(string path)
+        {
+            if (File.Exists(path))
+                using (var stream = OpenOrCreate(path))
+                    return ReadMeta(stream);
+
+            return new FlatFileMeta();
+        }
+
         private static FlatFileMeta ReadMeta(Stream stream)
         {
             if (stream.Length < 1)
@@ -155,7 +163,7 @@ namespace Escher.Data.Engine.Flat
             return task.Result;
         }
 
-        private static FileStream Open(string path)
+        private static FileStream OpenOrCreate(string path)
         {
             return File.Open(path, FileMode.OpenOrCreate);
         }
@@ -163,11 +171,6 @@ namespace Escher.Data.Engine.Flat
         private static FileStream Append(string path)
         {
             return File.Open(path, FileMode.Append);
-        }
-
-        private static FileStream Truncate(string path)
-        {
-            return File.Open(path, FileMode.Truncate);
         }
     }
 }
