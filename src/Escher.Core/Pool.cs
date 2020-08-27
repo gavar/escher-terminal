@@ -13,7 +13,7 @@ namespace Escher
             return new ObjectRent<T>(pool, out value);
         }
 
-        public static ArrayRent<T> Rent<T>(int capacity) where T : class
+        public static ArrayRent<T> Rent<T>(int capacity)
         {
             return new ArrayRent<T>(capacity);
         }
