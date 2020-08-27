@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <RootNamespace>Escher.App</RootNamespace>
+        <AssemblyName>Escher.Application</AssemblyName>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FlatFile" Version="0.2.51" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Escher.Core\Escher.Core.csproj" />
+    </ItemGroup>
+
+</Project>
