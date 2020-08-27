@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escher.Xunit", "src\Escher.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escher.App", "src\Escher.App\Escher.App.csproj", "{DA03FF1F-3070-4F29-B39F-0565E291014C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escher.Terminal", "Escher.Terminal\Escher.Terminal.csproj", "{90B6ED1C-C980-431F-A0F5-CB5F060E55F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escher.Terminal", "src\Escher.Terminal\Escher.Terminal.csproj", "{90B6ED1C-C980-431F-A0F5-CB5F060E55F4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escher.App.Test", "test\Escher.App.Test\Escher.App.Test.csproj", "{FEA8AC77-1D93-4497-8F76-AD47A260F373}"
 EndProject

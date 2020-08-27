@@ -11,7 +11,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\src\Escher.App\Escher.App.csproj" />
+      <ProjectReference Include="..\Escher.App\Escher.App.csproj" />
+      <ProjectReference Include="..\Escher.Core\Escher.Core.csproj" />
     </ItemGroup>
 
 </Project>
