@@ -1,11 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
         <RootNamespace>Escher</RootNamespace>
-        <LangVersion>default</LangVersion>
-        <Nullable>enable</Nullable>
         <AssemblyName>Escher.Core</AssemblyName>
+        <LangVersion>8</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>

@@ -1,18 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
         <OutputType>Exe</OutputType>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <RuntimeIdentifiers>win</RuntimeIdentifiers>
+        <LangVersion>8</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.7" />
-      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.7" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.7" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.7" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Escher.App\Escher.App.csproj" />
-      <ProjectReference Include="..\Escher.Core\Escher.Core.csproj" />
+        <ProjectReference Include="..\Escher.App\Escher.App.csproj" />
+        <ProjectReference Include="..\Escher.Core\Escher.Core.csproj" />
     </ItemGroup>
 
 </Project>
