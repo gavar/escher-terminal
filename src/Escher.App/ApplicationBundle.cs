@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using Escher.App.Domain;
 using Escher.App.Services;
 using Escher.Data;
@@ -9,8 +10,11 @@ namespace Escher.App
 {
     public class ApplicationBundle
     {
+        private const string DB = "db";
+
         public void Install(IServiceCollection services)
         {
+            Directory.CreateDirectory(DB);
             services.AddSingleton<IRepositoryCentral, RepositoryServiceCentral>();
             services.AddSingleton(CreatePersonRepository);
             services.AddSingleton(CreatePersonRegistrationService);
@@ -18,7 +22,7 @@ namespace Escher.App
 
         private static IRepository<Person> CreatePersonRepository(IServiceProvider provider)
         {
-            return new FlatFileRepository64<Person>("Person.csv");
+            return new FlatFileRepository64<Person>(DB + "/person.csv");
         }
 
         private static IPersonRegistrationService CreatePersonRegistrationService(IServiceProvider provider)
