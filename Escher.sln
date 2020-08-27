@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escher.Xunit", "src\Escher.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escher.App", "src\Escher.App\Escher.App.csproj", "{DA03FF1F-3070-4F29-B39F-0565E291014C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escher.Terminal", "Escher.Terminal\Escher.Terminal.csproj", "{90B6ED1C-C980-431F-A0F5-CB5F060E55F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{DA03FF1F-3070-4F29-B39F-0565E291014C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA03FF1F-3070-4F29-B39F-0565E291014C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA03FF1F-3070-4F29-B39F-0565E291014C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90B6ED1C-C980-431F-A0F5-CB5F060E55F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90B6ED1C-C980-431F-A0F5-CB5F060E55F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90B6ED1C-C980-431F-A0F5-CB5F060E55F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90B6ED1C-C980-431F-A0F5-CB5F060E55F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
