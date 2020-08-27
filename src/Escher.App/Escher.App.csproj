@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <PackageReference Include="FlatFile" Version="0.2.51" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.7" />
     </ItemGroup>
 
     <ItemGroup>
