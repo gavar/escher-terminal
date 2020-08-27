@@ -98,7 +98,7 @@ namespace Escher.Terminal
 
         public bool AskYesNo(string label, bool optional = false)
         {
-            return Ask(label, ParseYesNo, optional, null);
+            return Ask(label, ParseYesNo, optional, " (Y/N):");
         }
 
         public string Ask(string label, bool optional = false)
