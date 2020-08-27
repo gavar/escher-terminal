@@ -20,13 +20,22 @@ namespace Escher.App.Services
             DoRegister(person);
         }
 
-        public int Verify(Person person)
+        public int VerifyAge(DateTime dob, bool authorized)
         {
-            if (DateUtils.AgeFullYears(person.BirthDate) < MinAge)
+            if (DateUtils.AgeFullYears(dob) < MinAge)
                 return Young;
 
-            if (DateUtils.AgeFullYears(person.BirthDate) < AdultAge && !person.IsAuthorized)
+            if (DateUtils.AgeFullYears(dob) < AdultAge && !authorized)
                 return Unauthorized;
+
+            return 0;
+        }
+
+        public int Verify(Person person)
+        {
+            var status = VerifyAge(person.BirthDate, person.IsAuthorized);
+            if (status < 0)
+                return status;
 
             // referencing self
             var spouse = person.Spouse;
