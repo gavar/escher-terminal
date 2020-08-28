@@ -15,16 +15,22 @@ Project use flat file database structure to persist records in the `db` folder. 
 
 ## Project Structure
 
-##### [Escher.Xunit](src/Escher.Xunit/Escher.Xunit.csproj)
+##### [Escher.Xunit](src/Escher.Xunit)
 Utilities for file contents assertions via Xunit.
 
-##### [Escher.Core](src/Escher.Core/Escher.Core.csproj) 
+##### [Escher.Core](src/Escher.Core) 
 Core library without any application specific business logic. Provides abstraction layer for entity persistence via Repository pattern. 
 
-##### [Escher.App](src/Escher.App/Escher.App.csproj) 
+##### [Escher.Core.Test](test/Escher.Core.Test) 
+Unit tests for the `Escher.Core` core foundation.
+
+##### [Escher.App](src/Escher.App) 
 Application business layer. Provides configuration bundle for easy installation into external service container.
 
-##### [Escher.Terminal](src/Escher.Terminal/Escher.Terminal.csproj) 
+##### [Escher.App.Test](src/Escher.Core) 
+Unit tests for the `Escher.App` application business layer.
+
+##### [Escher.Terminal](src/Escher.Terminal) 
 Console application using terminal for interaction with the application.
 
 ## Contributing
